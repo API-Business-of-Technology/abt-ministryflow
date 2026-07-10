@@ -1,0 +1,31 @@
+{
+  "name": "backend_ministry",
+  "version": "1.0.0",
+  "description": "dossier de backend du logiciel MinistryFlow.",
+  "keywords": [
+    "server"
+  ],
+  "homepage": "https://gitlab.com/apibusinesstechnology-group/depot_ministryflow#readme",
+  "bugs": {
+    "url": "https://gitlab.com/apibusinesstechnology-group/depot_ministryflow/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/apibusinesstechnology-group/depot_ministryflow.git"
+  },
+  "license": "UNLICENSED",
+  "author": "API Business Technology",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "compression": "^1.8.1",
+    "cors": "^2.8.6",
+    "helmet": "^8.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
