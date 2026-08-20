@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import "./PageBienvenue.css";
 
 export default function PageBienvenue(){
@@ -15,15 +16,15 @@ export default function PageBienvenue(){
                 </div>
 
                   <div id="boite3">
-                      <button id="button">
+                      <Link id="button" href="/loginForm">
                             Se connecter a votre compte
                             →
-                       </button>
+                       </Link>
 
-                      <button>
+                      <Link id="button" href="">
                            Créer un nouveau compte
                             →
-                      </button>
+                      </Link>
                   </div>
             </div>
 
