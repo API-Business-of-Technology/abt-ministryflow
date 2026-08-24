@@ -1,0 +1,12 @@
+.Register {
+
+   display: flex;
+   flex-direction: column;
+   gap:3rem;
+   justify-self: center;
+   align-items: center;
+   border: 3px solid whitesmoke;
+   border-radius: 5px;
+   padding: 3rem;
+   margin-top: 5rem;
+}
