@@ -193,7 +193,7 @@ export default function RegisterForm1({ onSubmit, loading }: LoginFormProps) {
       </div>
 
       <button type="submit" disabled={isLoading} id="button">
-        {isLoading ? "Connexion en cours..." : "Continuer"}
+        {isLoading ? "Connexion en cours..." : "Envoyer"}
       </button>
 
     </form>
