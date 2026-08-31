@@ -1,0 +1,21 @@
+{
+  "name": "ministryflow-desktop",
+  "version": "1.0.0",
+  "description": "MinistryFlow Desktop App - API Business Technology",
+  "keywords": [
+    "ministryflow",
+    "electron",
+    "desktop-app",
+    "api-business-technology"
+  ],
+  "author": "Pierre - API Business Technology",
+  "license": "UNLICENSED",
+  "type": "module",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^31.7.7"
+  }
+}

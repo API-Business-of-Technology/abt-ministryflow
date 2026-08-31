@@ -1,0 +1,26 @@
+diff --git a/frontend_ministry_flow/app/components/PageBienvenue.tsx b/frontend_ministry_flow/app/components/PageBienvenue.tsx
+index 024c3f4..6f28276 100644
+--- a/frontend_ministry_flow/app/components/PageBienvenue.tsx
++++ b/frontend_ministry_flow/app/components/PageBienvenue.tsx
+@@ -21,7 +21,7 @@ export default function PageBienvenue(){
+                             →
+                        </Link>
+ 
+-                      <Link id="button" href="">
++                      <Link id="button" href="/registerForm">
+                            Créer un nouveau compte
+                             →
+                       </Link>
+diff --git a/frontend_ministry_flow/app/registerForm/AfficherFormRegister.css b/frontend_ministry_flow/app/registerForm/AfficherFormRegister.css
+index 157e2c3..a0c6edd 100644
+--- a/frontend_ministry_flow/app/registerForm/AfficherFormRegister.css
++++ b/frontend_ministry_flow/app/registerForm/AfficherFormRegister.css
+@@ -14,6 +14,5 @@
+     background-position: center;
+     background-repeat: no-repeat;
+     padding: 2rem;
+-
+-    
++  
+ }
+\ No newline at end of file
