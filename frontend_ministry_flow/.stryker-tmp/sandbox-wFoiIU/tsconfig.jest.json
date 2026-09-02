@@ -6,11 +6,14 @@
     "esModuleInterop": true,
     "allowJs": true,
     "skipLibCheck": true,
-    "types": ["jest", "node"],
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "types": ["jest", "@testing-library/jest-dom"],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"]
+    }
   },
   "include": [
-    "dossier_test/**/*.ts",
-    "dossier_test/**/*.tsx"
+    "dossier_test/**/*"
   ]
 }

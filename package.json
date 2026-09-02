@@ -1,5 +1,6 @@
 {
   "devDependencies": {
+    "@playwright/test": "^1.62.1",
     "@testing-library/jest-dom": "^7.0.1",
     "@testing-library/react": "^16.3.3",
     "@types/jest": "^30.0.0",
@@ -13,5 +14,13 @@
     "sonar-scanner": "^3.1.0",
     "supertest": "^7.2.2",
     "ts-jest": "^29.4.12"
+  },
+  "scripts": {
+    "test": "jest --ci",
+    "test:watch": "jest --watch",
+    "test:unit": "jest --ci --testPathPattern=unit_test",
+    "test:component": "jest --ci --testPathPattern=component_test",
+    "test:sentinel": "jest --ci --testPathPattern=sentinelle_test",
+    "test:regression": "jest --ci --testPathPattern=regression_test"
   }
 }

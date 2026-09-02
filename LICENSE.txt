@@ -1,0 +1,14 @@
+Copyright (c) 2026 API Business Technology
+All rights reserved.
+
+This software is proprietary and confidential. 
+Unauthorized copying, modification, distribution, or use of this software, 
+in whole or in part, is strictly prohibited without prior written permission 
+from API Business Technology.
+
+This software is provided exclusively for internal use within API Business 
+Technology and authorized partners under signed agreements. No license or 
+rights are granted to any third party.
+
+Any attempt to reverse engineer, decompile, or otherwise derive the source 
+code or underlying structure of this software is strictly forbidden.

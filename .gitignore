@@ -1,0 +1,47 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Frontend Next.js
+.next/
+out/
+dist/
+build/
+
+# Backend
+dist/
+build/
+
+# Logs
+*.log
+logs/
+*.tmp
+
+# IDE
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Python / AI
+__pycache__/
+*.ipynb_checkpoints
+notebooks/.ipynb_checkpoints
+
+# Data
+data/
+*.csv
+*.zip
+*.tar
+*.gz
+
+# Images / Videos (si yo pa pou repo a)
+*.png
+*.jpg
+*.jpeg
+*.mp4
+*.mov

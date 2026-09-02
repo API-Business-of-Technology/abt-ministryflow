@@ -1,0 +1,66 @@
+.Form{
+
+   display: flex; 
+   flex-direction: column;
+   gap: 1rem;
+   background-image: url("/form.png");
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   padding: 4rem;
+   min-height: 100vh;
+  
+}
+
+.Form h2{
+
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+   font-weight: bold;
+   font-size: clamp(1rem, 1.5vh, 2.3rem);
+   text-align: center;
+}
+
+.Form .bloc{
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-self: center;
+  padding-right: 6rem;
+  padding-left: 6rem;
+  
+
+}
+
+
+.Form .bloc .input{
+
+   width: 17rem;
+   
+}
+
+
+.Form #button{
+
+   width: 20rem;
+   align-self: center;
+   padding: 0.5rem;
+   background-color: burlywood;
+   color: white;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+   font-size: clamp(1rem, 1.5vh, 2.7rem);
+   
+}
+
+
+.Form #button:hover{
+
+  background-color: rgb(172, 131, 83);
+  border-radius: 15px;
+}
+
+
+
+
+
+
