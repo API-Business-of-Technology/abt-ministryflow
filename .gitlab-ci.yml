@@ -4,11 +4,15 @@ stages:
   - install
   - lint
   - test
+  - e2e
+  - load
+  - mutation
   - sonar
+  - terraform
+  - ansible
   - build
   - deploy
 
-# Pipeline kouri sou dev + main
 workflow:
   rules:
     - if: '$CI_COMMIT_BRANCH == "dev"'
@@ -18,6 +22,11 @@ cache:
   key: ${CI_COMMIT_REF_SLUG}
   paths:
     - node_modules/
+    - .next/cache/
+
+###############################################
+# LAYER 1 — DEV BRANCH (test rapid + optimisation)
+###############################################
 
 install_dependencies:
   stage: install
@@ -34,14 +43,42 @@ lint_code:
     - npm run prettier
   allow_failure: false
 
-run_tests:
+unit_integration_tests:
   stage: test
   script:
-    - npm run test
+    - npm run test:unit
+    - npm run test:integration
+    - npm run test:component
   artifacts:
     paths:
       - coverage/
     expire_in: 1 week
+
+###############################################
+# LAYER 2 — MAIN BRANCH (quality enterprise)
+###############################################
+
+e2e_tests:
+  stage: e2e
+  script:
+    - npx playwright install
+    - npm run test:e2e
+  only:
+    - main
+
+load_tests:
+  stage: load
+  script:
+    - npm run test:load
+  only:
+    - main
+
+mutation_tests:
+  stage: mutation
+  script:
+    - npm run mutate
+  only:
+    - main
 
 sonarqube_scan:
   stage: sonar
@@ -54,11 +91,32 @@ sonarqube_scan:
       -Dsonar.projectKey=MF
       -Dsonar.organization=apibusiness
       -Dsonar.sources=src
-      -Dsonar.tests=tests
+      -Dsonar.tests=dossier_test
       -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
       -Dsonar.host.url=$SONAR_HOST_URL
       -Dsonar.login=$SONAR_TOKEN
   allow_failure: false
+  only:
+    - main
+
+terraform_apply:
+  stage: terraform
+  image: hashicorp/terraform:latest
+  script:
+    - terraform init
+    - terraform validate
+    - terraform plan
+    - terraform apply -auto-approve
+  only:
+    - main
+
+ansible_deploy:
+  stage: ansible
+  image: cytopia/ansible:latest
+  script:
+    - ansible-playbook -i inventory deploy.yml
+  only:
+    - main
 
 build_project:
   stage: build
@@ -66,7 +124,10 @@ build_project:
     - npm run build
   artifacts:
     paths:
+      - .next/
       - dist/
+  only:
+    - main
 
 deploy_prod:
   stage: deploy
@@ -74,3 +135,4 @@ deploy_prod:
     - echo "Déploiement en production..."
   only:
     - main
+
