@@ -1,0 +1,6 @@
+vps_deploy_backend:
+  stage: vps_deploy
+  script:
+    - ssh -o StrictHostKeyChecking=no $VPS_USER@$VPS_HOST "bash /app/deploy.sh"
+  only:
+    - main

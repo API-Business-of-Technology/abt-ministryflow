@@ -1,0 +1,10 @@
+distribution:
+  stage: distribution
+  image: node:22
+  script:
+    - npm run release   # electron-builder release
+  artifacts:
+    paths:
+      - dist/
+  only:
+    - main

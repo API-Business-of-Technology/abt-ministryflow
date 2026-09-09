@@ -1,0 +1,10 @@
+terraform_apply:
+  stage: terraform
+  image: hashicorp/terraform:latest
+  script:
+    - terraform init
+    - terraform validate
+    - terraform plan
+    - terraform apply -auto-approve
+  only:
+    - main

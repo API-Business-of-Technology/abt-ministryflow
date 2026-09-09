@@ -1,0 +1,47 @@
+security_scan:
+  stage: security
+  image: docker:latest
+  services:
+    - docker:dind
+
+  variables:
+    DOCKER_DRIVER: overlay2
+
+  script:
+    # 1) Dependency scanning
+    - echo "=== DEPENDENCY SCANNING ==="
+    - npm audit --audit-level=high || true
+
+    # 2) SAST scanning (GitLab built-in)
+    - echo "=== SAST SCAN ==="
+    - gitlab-sast || true
+
+    # 3) Secret detection
+    - echo "=== SECRET DETECTION ==="
+    - gitlab-secret-detection || true
+
+    # 4) Container scanning (si Dockerfile prezan)
+    - echo "=== CONTAINER SCAN ==="
+    - |
+      if [ -f Dockerfile ]; then
+        docker build -t security-image .
+        gitlab-container-scanning security-image || true
+      else
+        echo "Pa gen Dockerfile, skip container scan."
+      fi
+
+    # 5) License compliance
+    - echo "=== LICENSE COMPLIANCE ==="
+    - gitlab-license-scanning || true
+
+  artifacts:
+    paths:
+      - gl-sast-report.json
+      - gl-secret-detection-report.json
+      - gl-dependency-scanning-report.json
+      - gl-container-scanning-report.json
+      - gl-license-scanning-report.json
+    expire_in: 1 week
+
+  only:
+    - main

@@ -1,0 +1,6 @@
+load_tests:
+  stage: load
+  script:
+    - npm run test:load
+  only:
+    - main

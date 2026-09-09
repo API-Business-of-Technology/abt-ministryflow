@@ -1,4 +1,4 @@
-image: node:18
+image: node:22
 
 stages:
   - install
@@ -12,7 +12,16 @@ stages:
   - ansible
   - build
   - deploy
+  - security
+  - build_desktop
+  - auto_update
+  - code_sign
+  - distribution
+  - docker_build
+  - k8s_deploy
+  - vps_deploy
 
+  
 workflow:
   rules:
     - if: '$CI_COMMIT_BRANCH == "dev"'
@@ -24,115 +33,24 @@ cache:
     - node_modules/
     - .next/cache/
 
-###############################################
-# LAYER 1 — DEV BRANCH (test rapid + optimisation)
-###############################################
-
-install_dependencies:
-  stage: install
-  script:
-    - npm ci
-  artifacts:
-    paths:
-      - node_modules/
-
-lint_code:
-  stage: lint
-  script:
-    - npm run lint
-    - npm run prettier
-  allow_failure: false
-
-unit_integration_tests:
-  stage: test
-  script:
-    - npm run test:unit
-    - npm run test:integration
-    - npm run test:component
-  artifacts:
-    paths:
-      - coverage/
-    expire_in: 1 week
-
-###############################################
-# LAYER 2 — MAIN BRANCH (quality enterprise)
-###############################################
-
-e2e_tests:
-  stage: e2e
-  script:
-    - npx playwright install
-    - npm run test:e2e
-  only:
-    - main
-
-load_tests:
-  stage: load
-  script:
-    - npm run test:load
-  only:
-    - main
-
-mutation_tests:
-  stage: mutation
-  script:
-    - npm run mutate
-  only:
-    - main
-
-sonarqube_scan:
-  stage: sonar
-  image: sonarsource/sonar-scanner-cli:latest
-  variables:
-    SONAR_USER_HOME: "${CI_PROJECT_DIR}/.sonar"
-    GIT_DEPTH: "0"
-  script:
-    - sonar-scanner
-      -Dsonar.projectKey=MF
-      -Dsonar.organization=apibusiness
-      -Dsonar.sources=src
-      -Dsonar.tests=dossier_test
-      -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
-      -Dsonar.host.url=$SONAR_HOST_URL
-      -Dsonar.login=$SONAR_TOKEN
-  allow_failure: false
-  only:
-    - main
-
-terraform_apply:
-  stage: terraform
-  image: hashicorp/terraform:latest
-  script:
-    - terraform init
-    - terraform validate
-    - terraform plan
-    - terraform apply -auto-approve
-  only:
-    - main
-
-ansible_deploy:
-  stage: ansible
-  image: cytopia/ansible:latest
-  script:
-    - ansible-playbook -i inventory deploy.yml
-  only:
-    - main
-
-build_project:
-  stage: build
-  script:
-    - npm run build
-  artifacts:
-    paths:
-      - .next/
-      - dist/
-  only:
-    - main
-
-deploy_prod:
-  stage: deploy
-  script:
-    - echo "Déploiement en production..."
-  only:
-    - main
+include:
+  - local: '.gitlab-ci/01-install.yml'
+  - local: '.gitlab-ci/02-lint.yml'
+  - local: '.gitlab-ci/03-test.yml'
+  - local: '.gitlab-ci/04-e2e.yml'
+  - local: '.gitlab-ci/05-load.yml'
+  - local: '.gitlab-ci/06-mutation.yml'
+  - local: '.gitlab-ci/07-sonar.yml'
+  - local: '.gitlab-ci/08-terraform.yml'
+  - local: '.gitlab-ci/09-ansible.yml'
+  - local: '.gitlab-ci/10-build.yml'
+  - local: '.gitlab-ci/11-deploy.yml'
+  - local: '.gitlab-ci/12-security.yml'
+  - local: '.gitlab-ci/13-build-desktop.yml'
+  - local: '.gitlab-ci/14-auto-update.yml'
+  - local: '.gitlab-ci/15-code-sign.yml'
+  - local: '.gitlab-ci/16-distribution.yml'
+  - local: '.gitlab-ci/17-docker-build.yml'
+  - local: '.gitlab-ci/18-k8s-deploy.yml'
+  - local: '.gitlab-ci/19-vps-deploy.yml'
 

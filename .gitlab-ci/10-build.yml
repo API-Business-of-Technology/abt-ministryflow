@@ -1,0 +1,10 @@
+build_project:
+  stage: build
+  script:
+    - npm run build
+  artifacts:
+    paths:
+      - .next/
+      - dist/
+  only:
+    - main

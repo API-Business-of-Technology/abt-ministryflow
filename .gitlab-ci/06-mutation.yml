@@ -1,0 +1,6 @@
+mutation_tests:
+  stage: mutation
+  script:
+    - npm run mutate
+  only:
+    - main

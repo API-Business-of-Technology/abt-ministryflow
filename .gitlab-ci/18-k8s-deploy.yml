@@ -1,0 +1,8 @@
+k8s_deploy_backend:
+  stage: k8s_deploy
+  image: bitnami/kubectl:latest
+  script:
+    - kubectl apply -f k8s/
+    - kubectl rollout status deployment/backend
+  only:
+    - main
