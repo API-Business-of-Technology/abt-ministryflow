@@ -1,0 +1,10 @@
+auto_update:
+  stage: auto_update
+  image: node:22
+  script:
+    - npm run publish   # electron-builder publish
+  artifacts:
+    paths:
+      - dist/
+  only:
+    - main

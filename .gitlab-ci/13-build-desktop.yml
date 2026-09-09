@@ -1,0 +1,14 @@
+electron_build:
+  stage: build_desktop
+  image: node:22
+  script:
+    - npm ci
+    - npm run lint
+    - npm run test
+    - npm run build:electron
+  artifacts:
+    paths:
+      - dist/
+    expire_in: 1 week
+  only:
+    - main

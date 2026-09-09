@@ -1,0 +1,10 @@
+unit_integration_tests:
+  stage: test
+  script:
+    - npm run test:unit
+    - npm run test:integration
+    - npm run test:component
+  artifacts:
+    paths:
+      - coverage/
+    expire_in: 1 week

@@ -1,0 +1,11 @@
+code_sign:
+  stage: code_sign
+  image: node:22
+  script:
+    - echo "$SIGN_CERT" > cert.pfx
+    - npm run sign       # electron-builder --win --mac
+  artifacts:
+    paths:
+      - dist/
+  only:
+    - main

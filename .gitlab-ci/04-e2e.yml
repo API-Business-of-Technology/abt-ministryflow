@@ -1,0 +1,7 @@
+e2e_tests:
+  stage: e2e
+  script:
+    - npx playwright install
+    - npm run test:e2e
+  only:
+    - main

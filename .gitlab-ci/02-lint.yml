@@ -1,0 +1,6 @@
+lint_code:
+  stage: lint
+  script:
+    - npm run lint
+    - npm run prettier
+  allow_failure: false

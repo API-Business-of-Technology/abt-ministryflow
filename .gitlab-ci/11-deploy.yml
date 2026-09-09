@@ -1,0 +1,6 @@
+deploy_prod:
+  stage: deploy
+  script:
+    - echo "Déploiement en production..."
+  only:
+    - main
