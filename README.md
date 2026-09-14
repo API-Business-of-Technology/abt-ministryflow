@@ -6,7 +6,7 @@
 ---
 
 <div align="center">
-  <img src="logo-ministryflow.png" alt="MinistryFlow Logo" width="180" />
+  <img src="logoministryflow.png" alt="MinistryFlow Logo" width="180" />
 </div>
 
 ---
