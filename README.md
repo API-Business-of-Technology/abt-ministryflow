@@ -89,6 +89,54 @@ MinistryFlow permet de :
 
 ---
 
+## Objectif du Projet
+
+Le projet **MinistryFlow** vise à automatiser les processus administratifs des ministères, municipalités et institutions publiques.  
+Il permet une gestion fluide des dossiers, workflows et décisions internes.
+
+---
+
+## Rôle dans l’Écosystème API Business Technology
+
+Ce projet fait partie de la suite **GovTech Solutions**.  
+Il occupe le rôle suivant :
+
+- **Fonction technique :** Backend + Frontend + IA  
+- **Responsabilité :**  
+  - Automatisation des workflows  
+  - Gestion des dossiers  
+  - Tableaux de bord décisionnels  
+  - Intégration avec MinistryFlow DevOps et MinistryFlow Dashboard
+
+---
+
+## Problème résolu
+
+- Processus administratifs lents  
+- Manque de traçabilité  
+- Absence d’automatisation  
+- Décisions basées sur des données incomplètes
+
+---
+
+## Utilisateurs ciblés
+
+- Ministères  
+- Municipalités  
+- Écoles  
+- Institutions publiques  
+- ONG
+
+---
+
+## Intégration avec les autres services
+
+- MinistryFlow DevOps  
+- MinistryFlow Dashboard  
+- Modules IA internes  
+- Services API internes
+
+
 ## Architecture globale
 
 ```
@@ -211,6 +259,92 @@ npm run electron
 - `POST /notifications/send`  
 
 ---
+
+## 📘 Documentation Fonctionnelle / API
+
+Cette section présente les fonctionnalités principales du projet ainsi que la structure générale de son API.
+
+---
+
+### 🔹 Endpoints principaux
+
+| Méthode | Endpoint | Description |
+|--------|----------|-------------|
+| GET    | /resource | Récupération des données principales |
+| POST   | /resource | Création d’une nouvelle ressource |
+| PUT    | /resource/:id | Mise à jour d’une ressource existante |
+| DELETE | /resource/:id | Suppression d’une ressource |
+
+> Remplacer **resource** par le nom réel selon le projet  
+> (ex : `/animals`, `/stocks`, `/alerts`, `/users`, etc.)
+
+---
+
+### 🔹 Paramètres importants
+
+- **id** : Identifiant unique de la ressource  
+- **token** : Jeton d’authentification (JWT)  
+- **animalId / stockId / userId** : Identifiants spécifiques selon le projet  
+- **limit / page** : Paramètres de pagination  
+- **filter** : Filtrage des données  
+
+---
+
+### Réponses de l’API
+
+- **200 – Succès**  
+  La requête a été traitée correctement.
+
+- **201 – Créé**  
+  Une nouvelle ressource a été ajoutée.
+
+- **400 – Erreur de validation**  
+  Paramètres manquants ou invalides.
+
+- **401 – Non authentifié**  
+  Jeton invalide ou absent.
+
+- **403 – Non autorisé**  
+  L’utilisateur n’a pas les permissions nécessaires.
+
+- **404 – Introuvable**  
+  Ressource inexistante.
+
+- **500 – Erreur serveur**  
+  Problème interne du système.
+
+---
+
+### Sécurité
+
+- **JWT** pour l’authentification  
+- **RBAC** (Role-Based Access Control) pour la gestion des permissions  
+- **Chiffrement** des données sensibles  
+- **Audit logs** pour tracer les actions importantes  
+- **Validation stricte** des entrées utilisateur  
+
+---
+
+### Modules / Fonctionnalités principales
+
+- Fonctionnalité 1 : [Décrire la fonction principale du projet]  
+- Fonctionnalité 2 : [Décrire une fonction secondaire]  
+- Fonctionnalité 3 : [Décrire une interaction avec un autre service]  
+
+> Remplacer ces lignes par les vraies fonctionnalités selon le repo.
+
+---
+
+### Intégration dans l’écosystème API Business Technology
+
+Ce projet fait partie de l’écosystème global et interagit avec :
+
+- [Nom du produit principal]  
+- [Backend / Frontend / DevOps / IA / IoT]  
+- [Autres services liés]  
+
+---
+
 
 ## Roadmap
 
