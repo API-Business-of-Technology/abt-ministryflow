@@ -366,6 +366,248 @@ Ce projet fait partie de l’écosystème global et interagit avec :
 
 ---
 
+## Sécurité & Confidentialité
+
+Le module **MinistryFlow Backend** gère des données sensibles liées aux membres, aux ministères, aux finances, aux présences et aux événements d’église.  
+La sécurité est donc une priorité absolue pour garantir la confidentialité et l’intégrité des informations.
+
+### Principes de sécurité appliqués
+- Authentification par jetons sécurisés (JWT)
+- Gestion des permissions avancée (RBAC : pasteur, leader, administrateur, membre)
+- Chiffrement des données sensibles (membres, finances, rapports)
+- Protection contre les attaques API (OWASP, rate limiting, anti‑replay)
+- Validation stricte des données envoyées par le frontend
+- Journalisation des actions critiques (création de ministères, finances, rapports)
+- Isolation des environnements (dev, staging, production)
+
+### Confidentialité
+- Aucune donnée réelle d’église n’est stockée dans ce dépôt
+- Les identifiants des membres sont masqués dans les environnements de test
+- Les systèmes réels respectent les normes canadiennes de protection des données (PIPEDA)
+- Les données sensibles sont traitées uniquement dans des environnements sécurisés
+
+MinistryFlow Backend garantit une gestion sécurisée, conforme et fiable des données d’église.
+```
+
+## Installation & Déploiement (Modèle)
+
+Ce dépôt représente le backend du système **MinistryFlow**, responsable de la gestion des ministères, des membres, des événements, des présences et des finances.
+
+### Prérequis
+- Node.js (Express.js ou NestJS)
+- PostgreSQL ou MongoDB
+- Git
+- Variables d’environnement pour la base de données et l’authentification
+
+### Installation (modèle)
+```bash
+git clone https://gitlab.com/api-business-technology/ministryflow-backend
+cd ministryflow-backend
+```
+
+### Déploiement (modèle)
+- Configuration de la base de données
+- Activation des modules d’authentification
+- Déploiement sur un serveur cloud sécurisé
+- Intégration avec MinistryFlow Frontend
+- Mise en place des logs et alertes
+
+Ce guide représente la structure générale du déploiement réel.
+```
+## oadmap (Modèle)
+
+### Q1 — Fondation
+- Architecture backend
+- Structure API
+- Documentation des endpoints
+
+### Q2 — Modules principaux
+- Gestion des membres
+- Gestion des ministères
+- Gestion des événements
+- Gestion des présences
+
+### Q3 — Modules avancés
+- Finances (dîmes, offrandes, dépenses)
+- Rapports PDF
+- Communication (SMS, email, notifications)
+
+### Q4 — Scalabilité
+- Optimisation cloud
+- Sécurité renforcée
+- Intégration complète MinistryFlow
+
+### Vision 2027
+- IA pour l’analyse de croissance
+- Automatisation des rapports d’église
+
+### Vision 2030
+- Plateforme d’église intelligente unifiée
+- Gestion autonome des ministères et événements
+```
+
+---
+
+## Sécurité & Confidentialité
+
+Le module **MinistryFlow Frontend** est l’interface utilisateur permettant de gérer les membres, les ministères, les événements, les présences et les finances.  
+Même si ce dépôt ne contient pas les données réelles, il représente une interface critique dans un système de gestion d’église.
+
+### Principes de sécurité appliqués
+- Communication sécurisée avec le backend (HTTPS / TLS)
+- Gestion des permissions (RBAC : pasteur, leader, administrateur, membre)
+- Protection contre les attaques frontales (XSS, CSRF, injections)
+- Validation stricte des données reçues du backend
+- Masquage des informations sensibles dans l’interface
+- Journalisation des actions utilisateur (connexion, création d’événements, gestion des ministères)
+
+### Confidentialité
+- Aucune donnée réelle d’église n’est stockée dans ce dépôt
+- Les identifiants des membres sont masqués dans les environnements de test
+- Les systèmes réels respectent les normes canadiennes de protection des données (PIPEDA)
+- Les données sensibles sont traitées uniquement dans des environnements sécurisés
+
+MinistryFlow Frontend garantit une visualisation sécurisée et conforme des données d’église.
+```
+
+## Installation & Déploiement (Modèle)
+
+Ce dépôt représente l’interface utilisateur du système **MinistryFlow**, permettant aux leaders et membres de consulter et gérer les ministères, événements, présences et finances.
+
+### Prérequis
+- Node.js (React / Next.js)
+- Git
+- Navigateur moderne
+- Variables d’environnement pour la connexion au backend
+
+### Installation (modèle)
+```bash
+git clone https://gitlab.com/api-business-technology/ministryflow-frontend
+cd ministryflow-frontend
+```
+
+### Déploiement (modèle)
+- Configuration de l’URL du backend
+- Déploiement sur un hébergement cloud sécurisé
+- Activation des modules d’affichage (membres, ministères, finances)
+- Intégration avec les systèmes d’authentification
+- Publication via CI/CD (GitLab)
+
+Ce guide représente la structure générale du déploiement réel.
+```
+
+## Roadmap (Modèle)
+
+### Q1 — Fondation
+- Architecture frontend
+- Structure du dashboard MinistryFlow
+- Documentation des composants
+
+### Q2 — Modules principaux
+- Gestion des membres
+- Gestion des ministères
+- Gestion des événements
+- Gestion des présences
+
+### Q3 — Modules avancés
+- Finances (dîmes, offrandes, dépenses)
+- Rapports PDF
+- Notifications (SMS, email)
+
+### Q4 — Scalabilité
+- Optimisation cloud
+- Sécurité renforcée
+- Intégration complète MinistryFlow
+
+### Vision 2027
+- Dashboard IA pour l’analyse de croissance
+- Automatisation des rapports d’église
+
+### Vision 2030
+- Plateforme d’église intelligente unifiée
+- Interface autonome pour la gestion des ministères
+```
+
+---
+
+## Sécurité & Confidentialité
+
+Le dépôt **MinistryFlow DevOps** regroupe les scripts, pipelines et configurations d’infrastructure liés au déploiement de MinistryFlow.  
+Il représente la couche d’orchestration technique (CI/CD, infrastructure, monitoring) et doit respecter des standards élevés de sécurité.
+
+### Principes de sécurité appliqués
+- Gestion sécurisée des secrets (variables d’environnement, vault)
+- Séparation des environnements (dev, staging, production)
+- Contrôle d’accès aux pipelines (permissions GitLab / GitHub)
+- Validation des artefacts avant déploiement (tests, lint, audit)
+- Journalisation des déploiements et des changements d’infrastructure
+- Conformité aux bonnes pratiques DevSecOps
+
+### Confidentialité
+- Aucune donnée réelle d’église n’est stockée dans ce dépôt
+- Les secrets et clés d’accès ne sont jamais commités en clair
+- Les systèmes réels utilisent des solutions de gestion de secrets dédiées
+
+MinistryFlow DevOps garantit une orchestration sécurisée et contrôlée des déploiements MinistryFlow.
+```
+
+## Installation & Déploiement (Modèle)
+
+Ce dépôt représente la couche DevOps de **MinistryFlow**, incluant les pipelines CI/CD, les scripts d’infrastructure et les configurations de déploiement.
+
+### Prérequis
+- Git
+- Accès à une plateforme CI/CD (GitLab CI, GitHub Actions, Azure DevOps)
+- Accès à l’infrastructure cible (cloud, conteneurs, VM)
+- Gestion des secrets (vault, variables protégées)
+
+### Installation (modèle)
+```bash
+git clone https://gitlab.com/api-business-technology/ministryflow-devops
+cd ministryflow-devops
+```
+
+### Déploiement (modèle)
+- Configuration des variables d’environnement (backend, frontend, base de données)
+- Activation des pipelines CI/CD (build, test, déploiement)
+- Déploiement sur l’infrastructure cible (cloud, conteneurs)
+- Mise en place du monitoring et des logs
+
+Ce guide représente la structure générale du déploiement réel de MinistryFlow via DevOps.
+```
+## Roadmap (Modèle)
+
+### Q1 — Fondation DevOps
+- Mise en place des pipelines CI/CD
+- Structuration des scripts d’infrastructure
+- Documentation des workflows
+
+### Q2 — Automatisation
+- Déploiement automatisé backend + frontend
+- Tests automatisés (unitaires, intégration)
+- Gestion des secrets et des environnements
+
+### Q3 — Observabilité
+- Monitoring (logs, métriques, alertes)
+- Tableaux de bord de déploiement
+- Audit des changements
+
+### Q4 — Scalabilité
+- Optimisation des déploiements cloud
+- Résilience et haute disponibilité
+- Intégration complète MinistryFlow
+
+### Vision 2027
+- DevOps entièrement automatisé pour MinistryFlow
+- Intégration MLOps pour les futurs modules IA
+
+### Vision 2030
+- Plateforme d’église intelligente avec déploiement autonome
+- Orchestration avancée des services MinistryFlow
+```
+
+---
+
 ## Licence
 
 Ce projet est **UNLICENSED**.  
