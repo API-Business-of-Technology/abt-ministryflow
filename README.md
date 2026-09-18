@@ -698,7 +698,12 @@ Tous droits réservés.
 **Fondateur & CEO : Pierre Richard Saint Louis**  
 API Business Technology  
 Ottawa, Ontario, Canada
+apibusinesstechnology@gmail.com
+apibusinesstechnology@outlook.com
+www.apibusinesstechnology.com
 
---- 
-- **Badges CI/CD**  
+# **Pensée du CEO**
+Si, dans ton parcours de vie, rien ne semble indiquer la réussite, ne te décourage pas. Continue de croire en une force plus grande que toi et travaille sans relâche pour construire le succès que tu désires. La réussite n’apparaît pas toujours au début, mais elle finit toujours par se manifester là où la discipline et la détermination persistent, même lorsque l’espoir devient fragile.
+
+Saint Louis Piuerre Richard, CEO of API Business Technology
 
