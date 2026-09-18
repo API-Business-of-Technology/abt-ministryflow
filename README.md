@@ -1,5 +1,4 @@
 
-
 # **README — MinistryFlow**  
 ### *Plateforme moderne de gestion d’église, ministères et opérations pastorales*
 
@@ -260,7 +259,7 @@ npm run electron
 
 ---
 
-## 📘 Documentation Fonctionnelle / API
+## Documentation Fonctionnelle / API
 
 Cette section présente les fonctionnalités principales du projet ainsi que la structure générale de son API.
 
@@ -345,6 +344,82 @@ Ce projet fait partie de l’écosystème global et interagit avec :
 
 ---
 
+## Testing & Quality (Modèle)
+
+Ce dépôt inclut une structure de tests permettant de garantir la qualité du code et la stabilité du système.
+
+### Types de tests
+- Tests unitaires (Jest / Pytest)
+- Tests d’intégration
+- Tests UI (Cypress pour les frontends)
+- Tests de performance (modèle)
+- Tests de sécurité (modèle)
+
+### Qualité du code
+- Linting automatique (ESLint / Flake8)
+- Formatage automatique (Prettier / Black)
+- Analyse statique (modèle)
+
+### Couverture de tests
+Un rapport de couverture sera généré automatiquement via CI/CD.
+
+### Objectif
+Assurer un code stable, maintenable et conforme aux standards professionnels.
+```
+
+---
+
+## CI/CD Pipeline (Modèle)
+
+Ce dépôt inclut un pipeline CI/CD permettant d’automatiser les étapes de build, test et déploiement.
+
+### Étapes du pipeline
+- Build du projet
+- Exécution des tests
+- Analyse de qualité
+- Génération des artefacts
+- Déploiement automatique (modèle)
+
+### Environnements
+- Développement
+- Staging
+- Production
+
+### Sécurité CI/CD
+- Variables protégées
+- Gestion des secrets
+- Permissions d’accès aux pipelines
+
+### Objectif
+Automatiser le cycle de développement pour garantir rapidité, fiabilité et qualité.
+```
+
+---
+
+## AI & Data (Modèle)
+
+Ce dépôt inclut une structure dédiée aux modules IA et aux données utilisées pour l’entraînement.
+
+### Structure des données
+- Datasets bruts
+- Datasets prétraités
+- Labels / annotations
+- Scripts de prétraitement
+
+### Modèles IA
+- Modèles de classification (modèle)
+- Modèles de détection (modèle)
+- Modèles de prédiction (modèle)
+
+### Pipeline IA
+- Prétraitement des données
+- Entraînement du modèle
+- Évaluation
+- Export du modèle
+
+### Objectif
+Fournir une base solide pour l’intégration de l’intelligence artificielle dans le système.
+```
 
 ## Roadmap
 
